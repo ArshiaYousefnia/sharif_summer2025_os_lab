@@ -1,0 +1,234 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmonofont{Courier New}
+\setmainlanguage{farsi}
+\setotherlanguage{english}
+\newfontfamily\persianfont[Script=Arabic]{XBZar}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{setspace}
+\usepackage{url}
+\onehalfspacing
+\usepackage{titling}
+\usepackage{float}
+\usepackage{etoolbox}
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newcommand{\persiandigit}[1]{%
+	\ifcase#1 ۰\or ۱\or ۲\or ۳\or ۴\or ۵\or ۶\or ۷\or ۸\or ۹\fi
+}
+\DeclareFieldFormat{labelnumber}{\persiandigit{#1}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\persianordinal}[1]{%
+	\ifcase#1
+	\or اول%
+	\or دوم%
+	\or سوم%
+	\or چهارم%
+	\or پنجم%
+	\or ششم%
+	\or هفتم%
+	\or هشتم%
+	\or نهم%
+	\or دهم%
+	\or یازدهم%
+	\or دوازدهم%
+	\or سیزدهم%
+	\or چهاردهم%
+	\or پانزدهم%
+	\or شانزدهم%
+	\or هفدهم%
+	\or هجدهم%
+	\or نوزدهم%
+	\or بیستم%
+	\else #1\fi
+}
+
+\newcommand{\persianordinalpage}{\persianfont\persianordinal{\value{page}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{filecontents}{\jobname.bib}
+@online{man7-getpgrp,
+    author    = {{Michael Kerrisk}},
+    title     = {getpgrp(2) - Linux manual page},
+    year      = {2024},
+    url       = {https://man7.org/linux/man-pages/man2/getpgrp.2.html},
+    note      = {Accessed: 2025-08-02}
+}
+
+\end{filecontents}
+
+\addbibresource{\jobname.bib}
+
+\defbibheading{bibliography}[]{%
+	\begin{RTL}
+		\section*{مراجع}
+	\end{RTL}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+	
+	% ==============================
+	% Title Page
+	% ==============================
+	\begin{titlepage}
+		\centering
+		\vspace*{1cm}
+		\includegraphics[width=4cm]{sharif.png}\\[1.5cm]
+		{\Large\textbf{دانشگاه صنعتی شریف}}\\[0.5cm]
+		{\large\textbf{دانشکده‌ی مهندسی کامپیوتر}}\\[1.5cm]
+		{\Huge\textbf{گزارش کار آزمایشگاه}}\\[0.5cm]
+		{\LARGE\textbf{آزمایشگاه سیستم‌های عامل}}\\[2cm]
+		
+		\textbf{گزارش آزمایش شماره ۵}\\
+		(ارتباط بین پردازه‌ای)
+		
+		\vfill
+		\begin{tabular}{rl}
+			\textbf{شماره‌ی گروه:} & ۲۰ \\
+			\textbf{گروه:} &
+			ارشیا یوسف‌نیا (۴۰۱۱۱۰۴۱۵) \\
+			& محمدعارف زارع زاده (۴۰۱۱۰۶۰۱۷) \\
+			\textbf{استاد درس:} & دکتر بیگی \\
+			\textbf{تاریخ:} & تابستان ۱۴۰۴ \\
+		\end{tabular}
+	\end{titlepage}
+	
+	% ==============================
+	% Persian Ordinal Page Numbering
+	% ==============================
+	\clearpage
+	\setcounter{page}{1}
+	\renewcommand{\thepage}{\persianordinalpage}
+	
+	\tableofcontents
+	\clearpage
+	\listoffigures
+	\clearpage
+	\listoftables
+	
+	% ==============================
+	% Switch to Persian Digits (۱, ۲, ۳, ...)
+	% ==============================
+	\clearpage
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
+	\renewcommand{\thepage}{\persianfont\arabic{page}}
+	
+	
+	% ==============================
+	% Main Content
+	% ==============================
+	
+	\section{ایجاد \textenglish{pipe} یک‌سویه}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/1.png}
+		\caption{توضیحات \textenglish{man pipe}}
+		\label{img:1}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/2.png}
+		\caption{برنامهٔ حداقلی برای ساخت موفق یک \textenglish{pipe} یک‌سویه}
+		\label{img:2}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/3.png}
+		\caption{مراحل کامپایل و اجرای موفق برنامهٔ شکل \ref{img:2}}
+		\label{img:3}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/4.png}
+		\caption{برنامهٔ انتقال پیام متنی از پردازه والد به فرزند و چاپ آن در فرزند}
+		\label{img:4}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/5.png}
+		\caption{مراحل کامپایل و اجرای موفق برنامهٔ شکل \ref{img:4}}
+		\label{img:5}
+	\end{figure}
+	\subsection{فعالیت‌ها}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/6.png}
+		\caption{برنامهٔ اجرای \textenglish{ls} در پردازهٔ والد و انتقال آن با \textenglish{pipe} به پردازهٔ فرزند و اجرای \textenglish{wc} روی این ورودی و خروجی دادن آن.}
+		\label{img:6}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/7.png}
+		\caption{مراحل کامپایل و اجرای موفق برنامهٔ شکل \ref{img:6}}
+		\label{img:7}
+	\end{figure}
+	
+	\newpage
+	\section{سیگنال}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/8.png}
+		\caption{توضیحات \textenglish{man signal}}
+		\label{img:8}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/9.png}
+		\caption{صفحه \textenglish{manual} دربارهٔ \textenglish{alarm}}
+		\label{img:9}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/10.png}
+		\caption{استفاده از سیگنال \textenglish{alarm} در یک برنامهٔ ساده به همراه نتیجهٔ اجرا}
+		\label{img:10}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/11.png}
+		\caption{تغییر برنامهٔ شکل \ref{img:10} با \textenglish{signal} و \textenglish{pause} برای کارایی خواسته شده}
+		\label{img:11}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/12.png}
+		\caption{مراحل کامپایل و احرای برنامهٔ شکل \ref{img:11}}
+		\label{img:12}
+	\end{figure}
+	\subsection{تمرین}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/13.png}
+		\caption{برنامهٔ حداقلی برای خروج از برنامهٔ با دوبار \textenglish{CTRL+C} به جای پیشفرض یک‌بار}
+		\label{img:13}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report5-resources/14.png}
+		\caption{مرحال کامپایل و اجرای برنامهٔ شکل \ref{img:13}}
+		\label{img:14}
+	\end{figure}
+        
+	% ==============================
+	% References
+	% ==============================
+	\newpage
+	\begin{LTR}
+		\begin{english}
+\printbibliography[title={مراجع}]
+\end{english}
+	\end{LTR}
+
+	
+\end{document}
+
