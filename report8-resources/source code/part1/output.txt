@@ -1,0 +1,496 @@
+make -C /lib/modules/6.14.0-27-generic/build M=/home/arefzarezade/Desktop/az8/part1/test modules
+make[1]: Entering directory '/usr/src/linux-headers-6.14.0-27-generic'
+make[2]: Entering directory '/home/arefzarezade/Desktop/az8/part1/test'
+make[2]: Leaving directory '/home/arefzarezade/Desktop/az8/part1/test'
+make[1]: Leaving directory '/usr/src/linux-headers-6.14.0-27-generic'
+=== Clearing dmesg ===
+sudo dmesg -C
+=== Inserting module ===
+sudo insmod sysaddr.ko
+=== Latest dmesg output ===
+sudo dmesg
+[  729.149164] sysaddr: init
+[  729.173910] sysaddr: kallsyms_lookup_name at 00000000c2cf6647
+[  729.206304] sysaddr: kallsyms_lookup at 000000008a5ddc55
+[  729.206509] sysaddr: found symbol 'sys_call_table' at 00000000c4ac44b6
+[  729.206519] sysaddr: walking syscall table at 00000000c4ac44b6 (printing up to 512 entries)
+[  729.206559] sysaddr: nr=  0 entry=00000000db2c3a57  name=__x64_sys_read +0x0  module=kernel
+[  729.206579] sysaddr: nr=  1 entry=000000009797b987  name=__x64_sys_write +0x0  module=kernel
+[  729.206604] sysaddr: nr=  2 entry=00000000645734bb  name=__x64_sys_open +0x0  module=kernel
+[  729.206616] sysaddr: nr=  3 entry=0000000090d7940f  name=__x64_sys_close +0x0  module=kernel
+[  729.206635] sysaddr: nr=  4 entry=00000000cbef34ee  name=__x64_sys_newstat +0x0  module=kernel
+[  729.206648] sysaddr: nr=  5 entry=00000000d4708b81  name=__x64_sys_newfstat +0x0  module=kernel
+[  729.206661] sysaddr: nr=  6 entry=000000002b70e368  name=__x64_sys_newlstat +0x0  module=kernel
+[  729.206672] sysaddr: nr=  7 entry=0000000013f82460  name=__x64_sys_poll +0x0  module=kernel
+[  729.206672] sysaddr: nr=  8 entry=00000000fb4ec694  name=__x64_sys_lseek +0x0  module=kernel
+[  729.206672] sysaddr: nr=  9 entry=0000000044e19519  name=__x64_sys_mmap +0x0  module=kernel
+[  729.206672] sysaddr: nr= 10 entry=00000000de41908e  name=__x64_sys_mprotect +0x0  module=kernel
+[  729.206672] sysaddr: nr= 11 entry=00000000142d72ab  name=__x64_sys_munmap +0x0  module=kernel
+[  729.206672] sysaddr: nr= 12 entry=000000004be7a0c4  name=__x64_sys_brk +0x0  module=kernel
+[  729.206672] sysaddr: nr= 13 entry=00000000acbc355c  name=__x64_sys_rt_sigaction +0x0  module=kernel
+[  729.206672] sysaddr: nr= 14 entry=0000000096f11db2  name=__x64_sys_rt_sigprocmask +0x0  module=kernel
+[  729.206672] sysaddr: nr= 15 entry=000000000ba4f837  name=__do_sys_rt_sigreturn +0x0  module=kernel
+[  729.206672] sysaddr: nr= 16 entry=0000000007ad47a4  name=__x64_sys_ioctl +0x0  module=kernel
+[  729.206672] sysaddr: nr= 17 entry=00000000c0501308  name=__x64_sys_pread64 +0x0  module=kernel
+[  729.206672] sysaddr: nr= 18 entry=00000000aa52782c  name=__x64_sys_pwrite64 +0x0  module=kernel
+[  729.206672] sysaddr: nr= 19 entry=00000000289fb476  name=__x64_sys_readv +0x0  module=kernel
+[  729.206672] sysaddr: nr= 20 entry=0000000036857ed3  name=__x64_sys_writev +0x0  module=kernel
+[  729.206672] sysaddr: nr= 21 entry=00000000f10e039e  name=__x64_sys_access +0x0  module=kernel
+[  729.206672] sysaddr: nr= 22 entry=000000002b342e5e  name=__x64_sys_pipe +0x0  module=kernel
+[  729.206672] sysaddr: nr= 23 entry=000000005e67176d  name=__x64_sys_select +0x0  module=kernel
+[  729.206672] sysaddr: nr= 24 entry=00000000ae29aeea  name=__do_sys_sched_yield +0x0  module=kernel
+[  729.206672] sysaddr: nr= 25 entry=0000000093e98928  name=__x64_sys_mremap +0x0  module=kernel
+[  729.206672] sysaddr: nr= 26 entry=0000000017886420  name=__x64_sys_msync +0x0  module=kernel
+[  729.206672] sysaddr: nr= 27 entry=000000002b1ec92b  name=__x64_sys_mincore +0x0  module=kernel
+[  729.206672] sysaddr: nr= 28 entry=00000000f3d49420  name=__x64_sys_madvise +0x0  module=kernel
+[  729.206672] sysaddr: nr= 29 entry=00000000bf106cfd  name=__x64_sys_shmget +0x0  module=kernel
+[  729.206672] sysaddr: nr= 30 entry=0000000074efbdab  name=__x64_sys_shmat +0x0  module=kernel
+[  729.206672] sysaddr: nr= 31 entry=0000000098811b2b  name=__x64_sys_shmctl +0x0  module=kernel
+[  729.206672] sysaddr: nr= 32 entry=00000000d1f5e026  name=__x64_sys_dup +0x0  module=kernel
+[  729.206672] sysaddr: nr= 33 entry=00000000f383eee1  name=__x64_sys_dup2 +0x0  module=kernel
+[  729.206672] sysaddr: nr= 34 entry=00000000a35ac568  name=__do_sys_pause +0x0  module=kernel
+[  729.206672] sysaddr: nr= 35 entry=00000000c48b1d13  name=__x64_sys_nanosleep +0x0  module=kernel
+[  729.206672] sysaddr: nr= 36 entry=00000000d947d153  name=__x64_sys_getitimer +0x0  module=kernel
+[  729.206672] sysaddr: nr= 37 entry=00000000cd7b0ed7  name=__x64_sys_alarm +0x0  module=kernel
+[  729.206672] sysaddr: nr= 38 entry=00000000c0c35ee8  name=__x64_sys_setitimer +0x0  module=kernel
+[  729.206672] sysaddr: nr= 39 entry=00000000ac9e3dca  name=__do_sys_getpid +0x0  module=kernel
+[  729.206672] sysaddr: nr= 40 entry=000000009cbb3b54  name=__x64_sys_sendfile64 +0x0  module=kernel
+[  729.206672] sysaddr: nr= 41 entry=0000000012403b52  name=__x64_sys_socket +0x0  module=kernel
+[  729.206672] sysaddr: nr= 42 entry=00000000e5f0c123  name=__x64_sys_connect +0x0  module=kernel
+[  729.206672] sysaddr: nr= 43 entry=000000006ae62e88  name=__x64_sys_accept +0x0  module=kernel
+[  729.206672] sysaddr: nr= 44 entry=0000000083776690  name=__x64_sys_sendto +0x0  module=kernel
+[  729.206672] sysaddr: nr= 45 entry=0000000043bfbe8e  name=__x64_sys_recvfrom +0x0  module=kernel
+[  729.206672] sysaddr: nr= 46 entry=000000008d4df5ab  name=__x64_sys_sendmsg +0x0  module=kernel
+[  729.206672] sysaddr: nr= 47 entry=00000000278e14b7  name=__x64_sys_recvmsg +0x0  module=kernel
+[  729.206672] sysaddr: nr= 48 entry=00000000c4262e38  name=__x64_sys_shutdown +0x0  module=kernel
+[  729.206672] sysaddr: nr= 49 entry=000000001f1934ee  name=__x64_sys_bind +0x0  module=kernel
+[  729.206672] sysaddr: nr= 50 entry=000000001db8f4f7  name=__x64_sys_listen +0x0  module=kernel
+[  729.206672] sysaddr: nr= 51 entry=000000008c55ed65  name=__x64_sys_getsockname +0x0  module=kernel
+[  729.206672] sysaddr: nr= 52 entry=00000000f9b10ca1  name=__x64_sys_getpeername +0x0  module=kernel
+[  729.206672] sysaddr: nr= 53 entry=0000000018eb9b99  name=__x64_sys_socketpair +0x0  module=kernel
+[  729.206672] sysaddr: nr= 54 entry=00000000dcd442a0  name=__x64_sys_setsockopt +0x0  module=kernel
+[  729.206672] sysaddr: nr= 55 entry=0000000065ebdb08  name=__x64_sys_getsockopt +0x0  module=kernel
+[  729.206672] sysaddr: nr= 56 entry=00000000832c67ee  name=__x64_sys_clone +0x0  module=kernel
+[  729.206672] sysaddr: nr= 57 entry=0000000015b73d81  name=__do_sys_fork +0x0  module=kernel
+[  729.206672] sysaddr: nr= 58 entry=000000000d14d66a  name=__do_sys_vfork +0x0  module=kernel
+[  729.206672] sysaddr: nr= 59 entry=000000007c98d433  name=__x64_sys_execve +0x0  module=kernel
+[  729.206672] sysaddr: nr= 60 entry=00000000343d9e65  name=__x64_sys_exit +0x0  module=kernel
+[  729.206672] sysaddr: nr= 61 entry=0000000068c1373e  name=__x64_sys_wait4 +0x0  module=kernel
+[  729.206672] sysaddr: nr= 62 entry=00000000a337ed24  name=__x64_sys_kill +0x0  module=kernel
+[  729.206672] sysaddr: nr= 63 entry=00000000a140cb34  name=__x64_sys_newuname +0x0  module=kernel
+[  729.206672] sysaddr: nr= 64 entry=00000000e4d58da3  name=__x64_sys_semget +0x0  module=kernel
+[  729.206672] sysaddr: nr= 65 entry=00000000425fa578  name=__x64_sys_semop +0x0  module=kernel
+[  729.206672] sysaddr: nr= 66 entry=000000004fead2ef  name=__x64_sys_semctl +0x0  module=kernel
+[  729.206672] sysaddr: nr= 67 entry=0000000030e83063  name=__x64_sys_shmdt +0x0  module=kernel
+[  729.206672] sysaddr: nr= 68 entry=00000000436fac3f  name=__x64_sys_msgget +0x0  module=kernel
+[  729.206672] sysaddr: nr= 69 entry=00000000e054c3f9  name=__x64_sys_msgsnd +0x0  module=kernel
+[  729.206672] sysaddr: nr= 70 entry=000000009d2e83dd  name=__x64_sys_msgrcv +0x0  module=kernel
+[  729.206672] sysaddr: nr= 71 entry=00000000e8ba78fb  name=__x64_sys_msgctl +0x0  module=kernel
+[  729.206672] sysaddr: nr= 72 entry=00000000b3f68df5  name=__x64_sys_fcntl +0x0  module=kernel
+[  729.206672] sysaddr: nr= 73 entry=000000000dffc63a  name=__x64_sys_flock +0x0  module=kernel
+[  729.206672] sysaddr: nr= 74 entry=000000008bd44751  name=__x64_sys_fsync +0x0  module=kernel
+[  729.206672] sysaddr: nr= 75 entry=000000009fbf8611  name=__x64_sys_fdatasync +0x0  module=kernel
+[  729.206672] sysaddr: nr= 76 entry=00000000f440f835  name=__x64_sys_truncate +0x0  module=kernel
+[  729.206672] sysaddr: nr= 77 entry=000000003d7242bd  name=__x64_sys_ftruncate +0x0  module=kernel
+[  729.206672] sysaddr: nr= 78 entry=000000002dd2affd  name=__x64_sys_getdents +0x0  module=kernel
+[  729.206672] sysaddr: nr= 79 entry=00000000ffa9b47c  name=__x64_sys_getcwd +0x0  module=kernel
+[  729.206672] sysaddr: nr= 80 entry=000000000be8c28e  name=__x64_sys_chdir +0x0  module=kernel
+[  729.206672] sysaddr: nr= 81 entry=0000000079cd4294  name=__x64_sys_fchdir +0x0  module=kernel
+[  729.206672] sysaddr: nr= 82 entry=000000008385f056  name=__x64_sys_rename +0x0  module=kernel
+[  729.206672] sysaddr: nr= 83 entry=00000000c09dca7b  name=__x64_sys_mkdir +0x0  module=kernel
+[  729.206672] sysaddr: nr= 84 entry=000000005ac4e0e6  name=__x64_sys_rmdir +0x0  module=kernel
+[  729.206672] sysaddr: nr= 85 entry=00000000d197633f  name=__x64_sys_creat +0x0  module=kernel
+[  729.206672] sysaddr: nr= 86 entry=00000000142f2433  name=__x64_sys_link +0x0  module=kernel
+[  729.206672] sysaddr: nr= 87 entry=00000000c1896512  name=__x64_sys_unlink +0x0  module=kernel
+[  729.206672] sysaddr: nr= 88 entry=0000000033259985  name=__x64_sys_symlink +0x0  module=kernel
+[  729.206672] sysaddr: nr= 89 entry=0000000080912094  name=__x64_sys_readlink +0x0  module=kernel
+[  729.206672] sysaddr: nr= 90 entry=00000000351f309b  name=__x64_sys_chmod +0x0  module=kernel
+[  729.206672] sysaddr: nr= 91 entry=00000000520866af  name=__x64_sys_fchmod +0x0  module=kernel
+[  729.206672] sysaddr: nr= 92 entry=00000000f046962e  name=__x64_sys_chown +0x0  module=kernel
+[  729.206672] sysaddr: nr= 93 entry=000000002e5a940d  name=__x64_sys_fchown +0x0  module=kernel
+[  729.206672] sysaddr: nr= 94 entry=00000000e5214647  name=__x64_sys_lchown +0x0  module=kernel
+[  729.206672] sysaddr: nr= 95 entry=00000000debc6857  name=__x64_sys_umask +0x0  module=kernel
+[  729.206672] sysaddr: nr= 96 entry=000000006f697dd7  name=__x64_sys_gettimeofday +0x0  module=kernel
+[  729.206672] sysaddr: nr= 97 entry=00000000b4d2a6e2  name=__x64_sys_getrlimit +0x0  module=kernel
+[  729.206672] sysaddr: nr= 98 entry=000000007658c59c  name=__x64_sys_getrusage +0x0  module=kernel
+[  729.206672] sysaddr: nr= 99 entry=00000000393357a6  name=__x64_sys_sysinfo +0x0  module=kernel
+[  729.206672] sysaddr: nr=100 entry=000000000ca7fa18  name=__x64_sys_times +0x0  module=kernel
+[  729.206672] sysaddr: nr=101 entry=0000000089078c08  name=__x64_sys_ptrace +0x0  module=kernel
+[  729.206672] sysaddr: nr=102 entry=00000000009b4eac  name=__do_sys_getuid +0x0  module=kernel
+[  729.206672] sysaddr: nr=103 entry=000000009e0108bd  name=__x64_sys_syslog +0x0  module=kernel
+[  729.206672] sysaddr: nr=104 entry=00000000047fcb88  name=__do_sys_getgid +0x0  module=kernel
+[  729.206672] sysaddr: nr=105 entry=000000008ef5217b  name=__x64_sys_setuid +0x0  module=kernel
+[  729.206672] sysaddr: nr=106 entry=00000000ce51eec7  name=__x64_sys_setgid +0x0  module=kernel
+[  729.206672] sysaddr: nr=107 entry=00000000f173ed3c  name=__do_sys_geteuid +0x0  module=kernel
+[  729.206672] sysaddr: nr=108 entry=000000003c91326b  name=__do_sys_getegid +0x0  module=kernel
+[  729.206672] sysaddr: nr=109 entry=00000000f220a39a  name=__x64_sys_setpgid +0x0  module=kernel
+[  729.206672] sysaddr: nr=110 entry=0000000073138177  name=__do_sys_getppid +0x0  module=kernel
+[  729.206672] sysaddr: nr=111 entry=00000000d7af6043  name=__do_sys_getpgrp +0x0  module=kernel
+[  729.206672] sysaddr: nr=112 entry=000000002548c053  name=__do_sys_setsid +0x0  module=kernel
+[  729.206672] sysaddr: nr=113 entry=00000000d8c9c595  name=__x64_sys_setreuid +0x0  module=kernel
+[  729.206672] sysaddr: nr=114 entry=000000000c58876f  name=__x64_sys_setregid +0x0  module=kernel
+[  729.206672] sysaddr: nr=115 entry=00000000c39cdeb6  name=__x64_sys_getgroups +0x0  module=kernel
+[  729.206672] sysaddr: nr=116 entry=00000000f3bb7492  name=__x64_sys_setgroups +0x0  module=kernel
+[  729.206672] sysaddr: nr=117 entry=000000008d23ec96  name=__x64_sys_setresuid +0x0  module=kernel
+[  729.206672] sysaddr: nr=118 entry=00000000d4c88f6b  name=__x64_sys_getresuid +0x0  module=kernel
+[  729.206672] sysaddr: nr=119 entry=00000000ae48639e  name=__x64_sys_setresgid +0x0  module=kernel
+[  729.206672] sysaddr: nr=120 entry=00000000e4281c32  name=__x64_sys_getresgid +0x0  module=kernel
+[  729.206672] sysaddr: nr=121 entry=00000000d093769d  name=__x64_sys_getpgid +0x0  module=kernel
+[  729.206672] sysaddr: nr=122 entry=00000000a0e0dee0  name=__x64_sys_setfsuid +0x0  module=kernel
+[  729.206672] sysaddr: nr=123 entry=0000000063fb297b  name=__x64_sys_setfsgid +0x0  module=kernel
+[  729.206672] sysaddr: nr=124 entry=0000000082c3e7d1  name=__x64_sys_getsid +0x0  module=kernel
+[  729.206672] sysaddr: nr=125 entry=00000000ba8c1052  name=__x64_sys_capget +0x0  module=kernel
+[  729.206672] sysaddr: nr=126 entry=00000000aa28c29a  name=__x64_sys_capset +0x0  module=kernel
+[  729.206672] sysaddr: nr=127 entry=000000006f869dfe  name=__x64_sys_rt_sigpending +0x0  module=kernel
+[  729.206672] sysaddr: nr=128 entry=0000000029b854d1  name=__x64_sys_rt_sigtimedwait +0x0  module=kernel
+[  729.206672] sysaddr: nr=129 entry=0000000079f7d27e  name=__x64_sys_rt_sigqueueinfo +0x0  module=kernel
+[  729.206672] sysaddr: nr=130 entry=00000000cb38db0b  name=__x64_sys_rt_sigsuspend +0x0  module=kernel
+[  729.206672] sysaddr: nr=131 entry=0000000022b489a4  name=__x64_sys_sigaltstack +0x0  module=kernel
+[  729.206672] sysaddr: nr=132 entry=000000003085427e  name=__x64_sys_utime +0x0  module=kernel
+[  729.206672] sysaddr: nr=133 entry=00000000da8966ed  name=__x64_sys_mknod +0x0  module=kernel
+[  729.206672] sysaddr: nr=134 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.206672] sysaddr: nr=135 entry=000000000fcf2a1a  name=__x64_sys_personality +0x0  module=kernel
+[  729.206672] sysaddr: nr=136 entry=00000000a421c82e  name=__x64_sys_ustat +0x0  module=kernel
+[  729.206672] sysaddr: nr=137 entry=00000000394f2759  name=__x64_sys_statfs +0x0  module=kernel
+[  729.206672] sysaddr: nr=138 entry=00000000bb2c56fb  name=__x64_sys_fstatfs +0x0  module=kernel
+[  729.206672] sysaddr: nr=139 entry=00000000d8d078d5  name=__x64_sys_sysfs +0x0  module=kernel
+[  729.206672] sysaddr: nr=140 entry=00000000bf277206  name=__x64_sys_getpriority +0x0  module=kernel
+[  729.206672] sysaddr: nr=141 entry=0000000056fd1b87  name=__x64_sys_setpriority +0x0  module=kernel
+[  729.206672] sysaddr: nr=142 entry=00000000cf5a3500  name=__x64_sys_sched_setparam +0x0  module=kernel
+[  729.206672] sysaddr: nr=143 entry=0000000014997974  name=__x64_sys_sched_getparam +0x0  module=kernel
+[  729.206672] sysaddr: nr=144 entry=000000005d8e2a24  name=__x64_sys_sched_setscheduler +0x0  module=kernel
+[  729.206672] sysaddr: nr=145 entry=0000000092124762  name=__x64_sys_sched_getscheduler +0x0  module=kernel
+[  729.206672] sysaddr: nr=146 entry=00000000aab49204  name=__x64_sys_sched_get_priority_max +0x0  module=kernel
+[  729.206672] sysaddr: nr=147 entry=000000006defd645  name=__x64_sys_sched_get_priority_min +0x0  module=kernel
+[  729.206672] sysaddr: nr=148 entry=00000000d51518f8  name=__x64_sys_sched_rr_get_interval +0x0  module=kernel
+[  729.206672] sysaddr: nr=149 entry=0000000076d9b060  name=__x64_sys_mlock +0x0  module=kernel
+[  729.206672] sysaddr: nr=150 entry=00000000f90bf84c  name=__x64_sys_munlock +0x0  module=kernel
+[  729.206672] sysaddr: nr=151 entry=0000000030aa0d26  name=__x64_sys_mlockall +0x0  module=kernel
+[  729.206672] sysaddr: nr=152 entry=00000000c190bca2  name=__do_sys_munlockall +0x0  module=kernel
+[  729.206672] sysaddr: nr=153 entry=000000002c0fa073  name=__do_sys_vhangup +0x0  module=kernel
+[  729.206672] sysaddr: nr=154 entry=000000002fe42727  name=__x64_sys_modify_ldt +0x0  module=kernel
+[  729.206672] sysaddr: nr=155 entry=000000008e8917fc  name=__x64_sys_pivot_root +0x0  module=kernel
+[  729.206672] sysaddr: nr=156 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.206672] sysaddr: nr=157 entry=00000000277bc118  name=__x64_sys_prctl +0x0  module=kernel
+[  729.206672] sysaddr: nr=158 entry=0000000000717478  name=__x64_sys_arch_prctl +0x0  module=kernel
+[  729.206672] sysaddr: nr=159 entry=0000000081ce102a  name=__x64_sys_adjtimex +0x0  module=kernel
+[  729.206672] sysaddr: nr=160 entry=00000000223a3b4a  name=__x64_sys_setrlimit +0x0  module=kernel
+[  729.206672] sysaddr: nr=161 entry=000000006918c864  name=__x64_sys_chroot +0x0  module=kernel
+[  729.206672] sysaddr: nr=162 entry=00000000e3ba29c5  name=__do_sys_sync +0x0  module=kernel
+[  729.206672] sysaddr: nr=163 entry=000000006ad6e448  name=__x64_sys_acct +0x0  module=kernel
+[  729.206672] sysaddr: nr=164 entry=00000000ed1b510a  name=__x64_sys_settimeofday +0x0  module=kernel
+[  729.206672] sysaddr: nr=165 entry=00000000ce6bb6ab  name=__x64_sys_mount +0x0  module=kernel
+[  729.206672] sysaddr: nr=166 entry=000000000cb2129a  name=__x64_sys_umount +0x0  module=kernel
+[  729.206672] sysaddr: nr=167 entry=00000000041d784d  name=__x64_sys_swapon +0x0  module=kernel
+[  729.206672] sysaddr: nr=168 entry=000000009284de5e  name=__x64_sys_swapoff +0x0  module=kernel
+[  729.206672] sysaddr: nr=169 entry=00000000429c4162  name=__x64_sys_reboot +0x0  module=kernel
+[  729.206672] sysaddr: nr=170 entry=00000000efca8b2b  name=__x64_sys_sethostname +0x0  module=kernel
+[  729.206672] sysaddr: nr=171 entry=0000000012202bee  name=__x64_sys_setdomainname +0x0  module=kernel
+[  729.206672] sysaddr: nr=172 entry=000000005eff9865  name=__x64_sys_iopl +0x0  module=kernel
+[  729.206672] sysaddr: nr=173 entry=00000000f5a631b2  name=__x64_sys_ioperm +0x0  module=kernel
+[  729.206672] sysaddr: nr=174 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.206672] sysaddr: nr=175 entry=000000007d077fd1  name=__x64_sys_init_module +0x0  module=kernel
+[  729.206672] sysaddr: nr=176 entry=00000000def7168d  name=__x64_sys_delete_module +0x0  module=kernel
+[  729.206672] sysaddr: nr=177 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.206672] sysaddr: nr=178 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.206672] sysaddr: nr=179 entry=00000000c81ba1b1  name=__x64_sys_quotactl +0x0  module=kernel
+[  729.206672] sysaddr: nr=180 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.206672] sysaddr: nr=181 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.206672] sysaddr: nr=182 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.206672] sysaddr: nr=183 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.206672] sysaddr: nr=184 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.207216] sysaddr: nr=185 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.207235] sysaddr: nr=186 entry=00000000dde6a8df  name=__do_sys_gettid +0x0  module=kernel
+[  729.207263] sysaddr: nr=187 entry=000000000a74c185  name=__x64_sys_readahead +0x0  module=kernel
+[  729.207279] sysaddr: nr=188 entry=00000000cb3776f9  name=__x64_sys_setxattr +0x0  module=kernel
+[  729.207290] sysaddr: nr=189 entry=00000000b8d452ea  name=__x64_sys_lsetxattr +0x0  module=kernel
+[  729.207299] sysaddr: nr=190 entry=00000000a6ed3f26  name=__x64_sys_fsetxattr +0x0  module=kernel
+[  729.207309] sysaddr: nr=191 entry=00000000bbd20f1f  name=__x64_sys_getxattr +0x0  module=kernel
+[  729.207320] sysaddr: nr=192 entry=000000005a041a2a  name=__x64_sys_lgetxattr +0x0  module=kernel
+[  729.207331] sysaddr: nr=193 entry=00000000c1a663ea  name=__x64_sys_fgetxattr +0x0  module=kernel
+[  729.207340] sysaddr: nr=194 entry=000000006c34a12c  name=__x64_sys_listxattr +0x0  module=kernel
+[  729.207349] sysaddr: nr=195 entry=00000000742ecaa7  name=__x64_sys_llistxattr +0x0  module=kernel
+[  729.207357] sysaddr: nr=196 entry=0000000018450fad  name=__x64_sys_flistxattr +0x0  module=kernel
+[  729.207367] sysaddr: nr=197 entry=00000000a64d8c3e  name=__x64_sys_removexattr +0x0  module=kernel
+[  729.207376] sysaddr: nr=198 entry=0000000058e2e0ca  name=__x64_sys_lremovexattr +0x0  module=kernel
+[  729.207386] sysaddr: nr=199 entry=0000000059553958  name=__x64_sys_fremovexattr +0x0  module=kernel
+[  729.207396] sysaddr: nr=200 entry=00000000ebe574a1  name=__x64_sys_tkill +0x0  module=kernel
+[  729.207407] sysaddr: nr=201 entry=000000006eaba737  name=__x64_sys_time +0x0  module=kernel
+[  729.207422] sysaddr: nr=202 entry=00000000a222fc9c  name=__x64_sys_futex +0x0  module=kernel
+[  729.207438] sysaddr: nr=203 entry=00000000a7a87424  name=__x64_sys_sched_setaffinity +0x0  module=kernel
+[  729.207452] sysaddr: nr=204 entry=00000000babb9b6e  name=__x64_sys_sched_getaffinity +0x0  module=kernel
+[  729.207465] sysaddr: nr=205 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.207485] sysaddr: nr=206 entry=000000007bec5350  name=__x64_sys_io_setup +0x0  module=kernel
+[  729.207497] sysaddr: nr=207 entry=0000000041621cb6  name=__x64_sys_io_destroy +0x0  module=kernel
+[  729.207507] sysaddr: nr=208 entry=0000000037d15f74  name=__x64_sys_io_getevents +0x0  module=kernel
+[  729.207518] sysaddr: nr=209 entry=00000000b5948add  name=__x64_sys_io_submit +0x0  module=kernel
+[  729.207529] sysaddr: nr=210 entry=0000000048f9b90c  name=__x64_sys_io_cancel +0x0  module=kernel
+[  729.207541] sysaddr: nr=211 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.207554] sysaddr: nr=212 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.207571] sysaddr: nr=213 entry=00000000d4eb1e45  name=__x64_sys_epoll_create +0x0  module=kernel
+[  729.207583] sysaddr: nr=214 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.207595] sysaddr: nr=215 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.207611] sysaddr: nr=216 entry=000000004cd7f684  name=__x64_sys_remap_file_pages +0x0  module=kernel
+[  729.207627] sysaddr: nr=217 entry=000000007a4981ca  name=__x64_sys_getdents64 +0x0  module=kernel
+[  729.207639] sysaddr: nr=218 entry=00000000301cc978  name=__x64_sys_set_tid_address +0x0  module=kernel
+[  729.207652] sysaddr: nr=219 entry=00000000330523f7  name=__do_sys_restart_syscall +0x0  module=kernel
+[  729.207663] sysaddr: nr=220 entry=00000000f11ec8c3  name=__x64_sys_semtimedop +0x0  module=kernel
+[  729.207673] sysaddr: nr=221 entry=000000005cd4e7d8  name=__x64_sys_fadvise64 +0x0  module=kernel
+[  729.207739] sysaddr: nr=222 entry=00000000dbaa3fe2  name=__x64_sys_timer_create +0x0  module=kernel
+[  729.207753] sysaddr: nr=223 entry=000000005d57d5e5  name=__x64_sys_timer_settime +0x0  module=kernel
+[  729.207764] sysaddr: nr=224 entry=000000009e65920a  name=__x64_sys_timer_gettime +0x0  module=kernel
+[  729.207775] sysaddr: nr=225 entry=000000000a020568  name=__x64_sys_timer_getoverrun +0x0  module=kernel
+[  729.207788] sysaddr: nr=226 entry=00000000b715314d  name=__x64_sys_timer_delete +0x0  module=kernel
+[  729.207799] sysaddr: nr=227 entry=00000000ec3f07b7  name=__x64_sys_clock_settime +0x0  module=kernel
+[  729.207810] sysaddr: nr=228 entry=00000000fe495b36  name=__x64_sys_clock_gettime +0x0  module=kernel
+[  729.207821] sysaddr: nr=229 entry=00000000c55ad68c  name=__x64_sys_clock_getres +0x0  module=kernel
+[  729.207832] sysaddr: nr=230 entry=000000008183e3b9  name=__x64_sys_clock_nanosleep +0x0  module=kernel
+[  729.207846] sysaddr: nr=231 entry=00000000142550ee  name=__x64_sys_exit_group +0x0  module=kernel
+[  729.207859] sysaddr: nr=232 entry=000000008bf9ddb2  name=__x64_sys_epoll_wait +0x0  module=kernel
+[  729.207872] sysaddr: nr=233 entry=000000007fffce32  name=__x64_sys_epoll_ctl +0x0  module=kernel
+[  729.207883] sysaddr: nr=234 entry=000000005baf339f  name=__x64_sys_tgkill +0x0  module=kernel
+[  729.207896] sysaddr: nr=235 entry=000000005b7ee8bd  name=__x64_sys_utimes +0x0  module=kernel
+[  729.207911] sysaddr: nr=236 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.207932] sysaddr: nr=237 entry=00000000fcb38455  name=__x64_sys_mbind +0x0  module=kernel
+[  729.207945] sysaddr: nr=238 entry=0000000044b05f00  name=__x64_sys_set_mempolicy +0x0  module=kernel
+[  729.207958] sysaddr: nr=239 entry=00000000f7f92553  name=__x64_sys_get_mempolicy +0x0  module=kernel
+[  729.207975] sysaddr: nr=240 entry=00000000f1b41912  name=__x64_sys_mq_open +0x0  module=kernel
+[  729.207988] sysaddr: nr=241 entry=00000000bd712255  name=__x64_sys_mq_unlink +0x0  module=kernel
+[  729.208002] sysaddr: nr=242 entry=00000000fee0f61d  name=__x64_sys_mq_timedsend +0x0  module=kernel
+[  729.208016] sysaddr: nr=243 entry=0000000007e1a22c  name=__x64_sys_mq_timedreceive +0x0  module=kernel
+[  729.208029] sysaddr: nr=244 entry=00000000b12b2640  name=__x64_sys_mq_notify +0x0  module=kernel
+[  729.208042] sysaddr: nr=245 entry=00000000850dfecc  name=__x64_sys_mq_getsetattr +0x0  module=kernel
+[  729.208057] sysaddr: nr=246 entry=000000004b495aac  name=__x64_sys_kexec_load +0x0  module=kernel
+[  729.208070] sysaddr: nr=247 entry=00000000e5329367  name=__x64_sys_waitid +0x0  module=kernel
+[  729.208084] sysaddr: nr=248 entry=000000007d03c0c2  name=__x64_sys_add_key +0x0  module=kernel
+[  729.208096] sysaddr: nr=249 entry=000000001afaf7eb  name=__x64_sys_request_key +0x0  module=kernel
+[  729.208112] sysaddr: nr=250 entry=0000000050919c41  name=__x64_sys_keyctl +0x0  module=kernel
+[  729.208138] sysaddr: nr=251 entry=000000000eac1f9e  name=__x64_sys_ioprio_set +0x0  module=kernel
+[  729.208149] sysaddr: nr=252 entry=0000000071b08cd6  name=__x64_sys_ioprio_get +0x0  module=kernel
+[  729.208165] sysaddr: nr=253 entry=000000007f79c227  name=__do_sys_inotify_init +0x0  module=kernel
+[  729.208178] sysaddr: nr=254 entry=0000000003ad6183  name=__x64_sys_inotify_add_watch +0x0  module=kernel
+[  729.208191] sysaddr: nr=255 entry=000000004b9ae014  name=__x64_sys_inotify_rm_watch +0x0  module=kernel
+[  729.208204] sysaddr: nr=256 entry=000000005335caac  name=__x64_sys_migrate_pages +0x0  module=kernel
+[  729.208219] sysaddr: nr=257 entry=00000000ae9c1cfc  name=__x64_sys_openat +0x0  module=kernel
+[  729.208231] sysaddr: nr=258 entry=00000000895a6608  name=__x64_sys_mkdirat +0x0  module=kernel
+[  729.208241] sysaddr: nr=259 entry=00000000517108c7  name=__x64_sys_mknodat +0x0  module=kernel
+[  729.208255] sysaddr: nr=260 entry=00000000640e113d  name=__x64_sys_fchownat +0x0  module=kernel
+[  729.208267] sysaddr: nr=261 entry=00000000686ca948  name=__x64_sys_futimesat +0x0  module=kernel
+[  729.208281] sysaddr: nr=262 entry=00000000fdef3d0c  name=__x64_sys_newfstatat +0x0  module=kernel
+[  729.208292] sysaddr: nr=263 entry=000000000c4c5876  name=__x64_sys_unlinkat +0x0  module=kernel
+[  729.208304] sysaddr: nr=264 entry=00000000b394eaf5  name=__x64_sys_renameat +0x0  module=kernel
+[  729.208314] sysaddr: nr=265 entry=000000006e331462  name=__x64_sys_linkat +0x0  module=kernel
+[  729.208325] sysaddr: nr=266 entry=00000000cfb87c72  name=__x64_sys_symlinkat +0x0  module=kernel
+[  729.208336] sysaddr: nr=267 entry=000000000f1ba01e  name=__x64_sys_readlinkat +0x0  module=kernel
+[  729.208348] sysaddr: nr=268 entry=0000000048e09d58  name=__x64_sys_fchmodat +0x0  module=kernel
+[  729.208358] sysaddr: nr=269 entry=00000000d1112f2e  name=__x64_sys_faccessat +0x0  module=kernel
+[  729.208370] sysaddr: nr=270 entry=00000000c7b6c19f  name=__x64_sys_pselect6 +0x0  module=kernel
+[  729.208379] sysaddr: nr=271 entry=00000000eb883408  name=__x64_sys_ppoll +0x0  module=kernel
+[  729.208392] sysaddr: nr=272 entry=0000000050fd33ea  name=__x64_sys_unshare +0x0  module=kernel
+[  729.208402] sysaddr: nr=273 entry=00000000b2ca05ef  name=__x64_sys_set_robust_list +0x0  module=kernel
+[  729.208406] sysaddr: nr=274 entry=000000004e831397  name=__x64_sys_get_robust_list +0x0  module=kernel
+[  729.208406] sysaddr: nr=275 entry=000000000b57e687  name=__x64_sys_splice +0x0  module=kernel
+[  729.208406] sysaddr: nr=276 entry=0000000001c964bb  name=__x64_sys_tee +0x0  module=kernel
+[  729.208406] sysaddr: nr=277 entry=00000000eaf6b18d  name=__x64_sys_sync_file_range +0x0  module=kernel
+[  729.208406] sysaddr: nr=278 entry=000000005bace671  name=__x64_sys_vmsplice +0x0  module=kernel
+[  729.208406] sysaddr: nr=279 entry=00000000e91926a6  name=__x64_sys_move_pages +0x0  module=kernel
+[  729.208406] sysaddr: nr=280 entry=000000005fa8554a  name=__x64_sys_utimensat +0x0  module=kernel
+[  729.208406] sysaddr: nr=281 entry=00000000e9ddac3b  name=__x64_sys_epoll_pwait +0x0  module=kernel
+[  729.208406] sysaddr: nr=282 entry=00000000871c18bb  name=__x64_sys_signalfd +0x0  module=kernel
+[  729.208406] sysaddr: nr=283 entry=0000000017309e56  name=__x64_sys_timerfd_create +0x0  module=kernel
+[  729.208406] sysaddr: nr=284 entry=00000000e750672e  name=__x64_sys_eventfd +0x0  module=kernel
+[  729.208406] sysaddr: nr=285 entry=0000000085e1fd85  name=__x64_sys_fallocate +0x0  module=kernel
+[  729.208406] sysaddr: nr=286 entry=00000000165cbf0b  name=__x64_sys_timerfd_settime +0x0  module=kernel
+[  729.208406] sysaddr: nr=287 entry=000000009f923334  name=__x64_sys_timerfd_gettime +0x0  module=kernel
+[  729.208406] sysaddr: nr=288 entry=000000003b1ea530  name=__x64_sys_accept4 +0x0  module=kernel
+[  729.208406] sysaddr: nr=289 entry=0000000026a79bb0  name=__x64_sys_signalfd4 +0x0  module=kernel
+[  729.208406] sysaddr: nr=290 entry=00000000c28ad14e  name=__x64_sys_eventfd2 +0x0  module=kernel
+[  729.208406] sysaddr: nr=291 entry=000000008c812d20  name=__x64_sys_epoll_create1 +0x0  module=kernel
+[  729.208406] sysaddr: nr=292 entry=0000000081703cb1  name=__x64_sys_dup3 +0x0  module=kernel
+[  729.208406] sysaddr: nr=293 entry=00000000b678a1f6  name=__x64_sys_pipe2 +0x0  module=kernel
+[  729.208406] sysaddr: nr=294 entry=00000000b127b502  name=__x64_sys_inotify_init1 +0x0  module=kernel
+[  729.208406] sysaddr: nr=295 entry=00000000813d70b7  name=__x64_sys_preadv +0x0  module=kernel
+[  729.208406] sysaddr: nr=296 entry=0000000082d7a236  name=__x64_sys_pwritev +0x0  module=kernel
+[  729.208406] sysaddr: nr=297 entry=000000008715eb58  name=__x64_sys_rt_tgsigqueueinfo +0x0  module=kernel
+[  729.208406] sysaddr: nr=298 entry=0000000058f9791c  name=__x64_sys_perf_event_open +0x0  module=kernel
+[  729.208406] sysaddr: nr=299 entry=00000000058be2dd  name=__x64_sys_recvmmsg +0x0  module=kernel
+[  729.208406] sysaddr: nr=300 entry=00000000c3d7b775  name=__x64_sys_fanotify_init +0x0  module=kernel
+[  729.208406] sysaddr: nr=301 entry=000000008b6f8086  name=__x64_sys_fanotify_mark +0x0  module=kernel
+[  729.208406] sysaddr: nr=302 entry=0000000026d1c642  name=__x64_sys_prlimit64 +0x0  module=kernel
+[  729.208406] sysaddr: nr=303 entry=000000006ef55a14  name=__x64_sys_name_to_handle_at +0x0  module=kernel
+[  729.208406] sysaddr: nr=304 entry=0000000004e62a11  name=__x64_sys_open_by_handle_at +0x0  module=kernel
+[  729.208406] sysaddr: nr=305 entry=000000007846536c  name=__x64_sys_clock_adjtime +0x0  module=kernel
+[  729.208406] sysaddr: nr=306 entry=00000000e506ed89  name=__x64_sys_syncfs +0x0  module=kernel
+[  729.208406] sysaddr: nr=307 entry=0000000067cf30de  name=__x64_sys_sendmmsg +0x0  module=kernel
+[  729.208406] sysaddr: nr=308 entry=000000000d3dbda4  name=__x64_sys_setns +0x0  module=kernel
+[  729.208406] sysaddr: nr=309 entry=0000000039f4e02d  name=__x64_sys_getcpu +0x0  module=kernel
+[  729.208406] sysaddr: nr=310 entry=000000008ce8608a  name=__x64_sys_process_vm_readv +0x0  module=kernel
+[  729.208406] sysaddr: nr=311 entry=00000000309468db  name=__x64_sys_process_vm_writev +0x0  module=kernel
+[  729.208406] sysaddr: nr=312 entry=000000003ac5d03b  name=__x64_sys_kcmp +0x0  module=kernel
+[  729.208406] sysaddr: nr=313 entry=00000000026e0ece  name=__x64_sys_finit_module +0x0  module=kernel
+[  729.208406] sysaddr: nr=314 entry=00000000a48c70d2  name=__x64_sys_sched_setattr +0x0  module=kernel
+[  729.208406] sysaddr: nr=315 entry=0000000084427a23  name=__x64_sys_sched_getattr +0x0  module=kernel
+[  729.208406] sysaddr: nr=316 entry=00000000920fadd8  name=__x64_sys_renameat2 +0x0  module=kernel
+[  729.208406] sysaddr: nr=317 entry=0000000058099941  name=__x64_sys_seccomp +0x0  module=kernel
+[  729.208406] sysaddr: nr=318 entry=00000000a801e03e  name=__x64_sys_getrandom +0x0  module=kernel
+[  729.208406] sysaddr: nr=319 entry=000000002c78a71e  name=__x64_sys_memfd_create +0x0  module=kernel
+[  729.208406] sysaddr: nr=320 entry=00000000ca222940  name=__x64_sys_kexec_file_load +0x0  module=kernel
+[  729.208406] sysaddr: nr=321 entry=00000000276333eb  name=__x64_sys_bpf +0x0  module=kernel
+[  729.208406] sysaddr: nr=322 entry=00000000a49926a3  name=__x64_sys_execveat +0x0  module=kernel
+[  729.208406] sysaddr: nr=323 entry=000000008beceaee  name=__x64_sys_userfaultfd +0x0  module=kernel
+[  729.208406] sysaddr: nr=324 entry=000000000f199139  name=__x64_sys_membarrier +0x0  module=kernel
+[  729.208406] sysaddr: nr=325 entry=00000000a7c66ab9  name=__x64_sys_mlock2 +0x0  module=kernel
+[  729.208406] sysaddr: nr=326 entry=0000000086de6cb2  name=__x64_sys_copy_file_range +0x0  module=kernel
+[  729.208406] sysaddr: nr=327 entry=0000000096e77e9c  name=__x64_sys_preadv2 +0x0  module=kernel
+[  729.208406] sysaddr: nr=328 entry=000000009a68f8bb  name=__x64_sys_pwritev2 +0x0  module=kernel
+[  729.208406] sysaddr: nr=329 entry=0000000036729112  name=__x64_sys_pkey_mprotect +0x0  module=kernel
+[  729.208406] sysaddr: nr=330 entry=0000000013f68080  name=__x64_sys_pkey_alloc +0x0  module=kernel
+[  729.208406] sysaddr: nr=331 entry=0000000028097364  name=__x64_sys_pkey_free +0x0  module=kernel
+[  729.208406] sysaddr: nr=332 entry=00000000963bf850  name=__x64_sys_statx +0x0  module=kernel
+[  729.208406] sysaddr: nr=333 entry=0000000032a81d7c  name=__x64_sys_io_pgetevents +0x0  module=kernel
+[  729.208406] sysaddr: nr=334 entry=0000000074ec21cc  name=__x64_sys_rseq +0x0  module=kernel
+[  729.208406] sysaddr: nr=335 entry=000000005476c5bc  name=__do_sys_uretprobe +0x0  module=kernel
+[  729.208406] sysaddr: nr=336 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=337 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=338 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=339 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=340 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=341 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=342 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=343 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=344 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=345 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=346 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=347 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=348 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=349 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=350 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=351 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=352 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=353 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=354 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=355 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=356 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=357 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=358 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=359 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=360 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=361 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=362 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=363 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=364 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=365 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=366 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=367 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=368 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=369 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=370 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=371 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=372 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=373 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=374 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=375 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=376 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=377 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=378 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=379 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=380 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=381 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=382 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=383 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=384 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=385 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=386 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=387 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=388 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=389 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=390 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=391 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=392 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=393 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=394 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=395 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=396 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=397 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=398 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=399 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=400 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=401 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=402 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=403 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=404 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=405 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=406 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=407 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=408 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=409 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=410 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=411 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=412 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=413 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=414 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=415 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=416 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=417 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=418 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=419 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=420 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=421 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=422 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=423 entry=000000007ec5ee48  name=__do_sys_ni_syscall +0x0  module=kernel
+[  729.208406] sysaddr: nr=424 entry=000000006a53da2d  name=__x64_sys_pidfd_send_signal +0x0  module=kernel
+[  729.208406] sysaddr: nr=425 entry=000000008b8b9ae7  name=__x64_sys_io_uring_setup +0x0  module=kernel
+[  729.208406] sysaddr: nr=426 entry=00000000f9266f9f  name=__x64_sys_io_uring_enter +0x0  module=kernel
+[  729.208691] sysaddr: nr=427 entry=0000000017c3d57c  name=__x64_sys_io_uring_register +0x0  module=kernel
+[  729.208706] sysaddr: nr=428 entry=000000004ae7a66f  name=__x64_sys_open_tree +0x0  module=kernel
+[  729.208717] sysaddr: nr=429 entry=000000008ad4d106  name=__x64_sys_move_mount +0x0  module=kernel
+[  729.208732] sysaddr: nr=430 entry=00000000a86b25c5  name=__x64_sys_fsopen +0x0  module=kernel
+[  729.208743] sysaddr: nr=431 entry=0000000046eefc57  name=__x64_sys_fsconfig +0x0  module=kernel
+[  729.208753] sysaddr: nr=432 entry=00000000a4f148b6  name=__x64_sys_fsmount +0x0  module=kernel
+[  729.208764] sysaddr: nr=433 entry=00000000b9816694  name=__x64_sys_fspick +0x0  module=kernel
+[  729.208779] sysaddr: nr=434 entry=000000005f851888  name=__x64_sys_pidfd_open +0x0  module=kernel
+[  729.208791] sysaddr: nr=435 entry=000000004bcb4acb  name=__x64_sys_clone3 +0x0  module=kernel
+[  729.208800] sysaddr: nr=436 entry=000000009f428f05  name=__x64_sys_close_range +0x0  module=kernel
+[  729.208814] sysaddr: nr=437 entry=000000000aa2fb49  name=__x64_sys_openat2 +0x0  module=kernel
+[  729.208824] sysaddr: nr=438 entry=00000000b96641de  name=__x64_sys_pidfd_getfd +0x0  module=kernel
+[  729.208834] sysaddr: nr=439 entry=0000000007bf619d  name=__x64_sys_faccessat2 +0x0  module=kernel
+[  729.208848] sysaddr: nr=440 entry=0000000095608291  name=__x64_sys_process_madvise +0x0  module=kernel
+[  729.208858] sysaddr: nr=441 entry=000000007600159f  name=__x64_sys_epoll_pwait2 +0x0  module=kernel
+[  729.208868] sysaddr: nr=442 entry=00000000f1e66458  name=__x64_sys_mount_setattr +0x0  module=kernel
+[  729.208884] sysaddr: nr=443 entry=00000000c5ff66f4  name=__x64_sys_quotactl_fd +0x0  module=kernel
+[  729.208910] sysaddr: nr=444 entry=00000000938aebf7  name=__x64_sys_landlock_create_ruleset +0x0  module=kernel
+[  729.208925] sysaddr: nr=445 entry=00000000dad4e6cc  name=__x64_sys_landlock_add_rule +0x0  module=kernel
+[  729.208939] sysaddr: nr=446 entry=00000000c9bec0d7  name=__x64_sys_landlock_restrict_self +0x0  module=kernel
+[  729.208950] sysaddr: nr=447 entry=0000000027ff4ae7  name=__x64_sys_memfd_secret +0x0  module=kernel
+[  729.208969] sysaddr: nr=448 entry=00000000bc91913c  name=__x64_sys_process_mrelease +0x0  module=kernel
+[  729.208981] sysaddr: nr=449 entry=000000004fb3e058  name=__x64_sys_futex_waitv +0x0  module=kernel
+[  729.208998] sysaddr: nr=450 entry=0000000076597d80  name=__x64_sys_set_mempolicy_home_node +0x0  module=kernel
+[  729.209014] sysaddr: nr=451 entry=00000000cb396a1a  name=__x64_sys_cachestat +0x0  module=kernel
+[  729.209026] sysaddr: nr=452 entry=00000000b1736edd  name=__x64_sys_fchmodat2 +0x0  module=kernel
+[  729.209040] sysaddr: nr=453 entry=00000000c4d18579  name=__x64_sys_map_shadow_stack +0x0  module=kernel
+[  729.209049] sysaddr: nr=454 entry=000000008ef790eb  name=__x64_sys_futex_wake +0x0  module=kernel
+[  729.209058] sysaddr: nr=455 entry=00000000b3415fbc  name=__x64_sys_futex_wait +0x0  module=kernel
+[  729.209068] sysaddr: nr=456 entry=00000000d452285a  name=__x64_sys_futex_requeue +0x0  module=kernel
+[  729.209082] sysaddr: nr=457 entry=00000000303856e6  name=__x64_sys_statmount +0x0  module=kernel
+[  729.209095] sysaddr: nr=458 entry=0000000033d7ddde  name=__x64_sys_listmount +0x0  module=kernel
+[  729.209109] sysaddr: nr=459 entry=000000006d4d6cde  name=__x64_sys_lsm_get_self_attr +0x0  module=kernel
+[  729.209118] sysaddr: nr=460 entry=0000000039234a0b  name=__x64_sys_lsm_set_self_attr +0x0  module=kernel
+[  729.209128] sysaddr: nr=461 entry=000000002c34e87d  name=__x64_sys_lsm_list_modules +0x0  module=kernel
+[  729.209141] sysaddr: nr=462 entry=00000000bf9f56e5  name=__x64_sys_mseal +0x0  module=kernel
+[  729.209152] sysaddr: nr=463 entry=00000000812cef9a  name=__x64_sys_setxattrat +0x0  module=kernel
+[  729.209162] sysaddr: nr=464 entry=00000000e36c6e77  name=__x64_sys_getxattrat +0x0  module=kernel
+[  729.209177] sysaddr: nr=465 entry=0000000074db7395  name=__x64_sys_listxattrat +0x0  module=kernel
+[  729.209185] sysaddr: nr=466 entry=000000005609b23b  name=__x64_sys_removexattrat +0x0  module=kernel
+[  729.209213] sysaddr: nr=468 entry=00000000532c6f0f  name=kallsyms_seqs_of_names +0x19d9da  module=kernel
+[  729.209229] sysaddr: nr=470 entry=00000000cf1024e1  name=vvar_vclock_fault +0x0  module=kernel
+[  729.209242] sysaddr: nr=476 entry=00000000dd80d0fb  name=kallsyms_seqs_of_names +0x19d9e8  module=kernel
+[  729.209255] sysaddr: nr=478 entry=0000000019b7d9dd  name=vdso_fault +0x0  module=kernel
+[  729.209267] sysaddr: nr=479 entry=00000000f86c7fa1  name=vdso_mremap +0x0  module=kernel
+[  729.209280] sysaddr: nr=484 entry=0000000074d64302  name=kallsyms_seqs_of_names +0x19d9ef  module=kernel
+[  729.209292] sysaddr: nr=486 entry=00000000e5109091  name=vvar_fault +0x0  module=kernel
+[  729.209305] sysaddr: nr=492 entry=000000008cbb77a4  name=raw_data +0x0  module=kernel
+[  729.209323] sysaddr: nr=498 entry=000000000bc946ca  name=extable +0x0  module=kernel
+[  729.209323] sysaddr: done
+=== Removing module ===
+sudo rmmod sysaddr
+=== Test complete ===
