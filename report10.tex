@@ -1,0 +1,211 @@
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmonofont{Courier New}
+\setmainlanguage{farsi}
+\setotherlanguage{english}
+\newfontfamily\persianfont[Script=Arabic]{XBZar}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{setspace}
+\usepackage{url}
+\onehalfspacing
+\usepackage{titling}
+\usepackage{float}
+\usepackage{etoolbox}
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newcommand{\persiandigit}[1]{%
+	\ifcase#1 ۰\or ۱\or ۲\or ۳\or ۴\or ۵\or ۶\or ۷\or ۸\or ۹\fi
+}
+\DeclareFieldFormat{labelnumber}{\persiandigit{#1}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\persianordinal}[1]{%
+	\ifcase#1
+	\or اول%
+	\or دوم%
+	\or سوم%
+	\or چهارم%
+	\or پنجم%
+	\or ششم%
+	\or هفتم%
+	\or هشتم%
+	\or نهم%
+	\or دهم%
+	\or یازدهم%
+	\or دوازدهم%
+	\or سیزدهم%
+	\or چهاردهم%
+	\or پانزدهم%
+	\or شانزدهم%
+	\or هفدهم%
+	\or هجدهم%
+	\or نوزدهم%
+	\or بیستم%
+	\else #1\fi
+}
+
+\newcommand{\persianordinalpage}{\persianfont\persianordinal{\value{page}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{filecontents}{\jobname.bib}
+	@online{a1,
+		url = {https://www.geeksforgeeks.org/c/c-program-demonstrate-fork-and-pipe/}
+	}
+\end{filecontents}
+
+\addbibresource{\jobname.bib}
+
+\defbibheading{bibliography}[]{%
+	\begin{RTL}
+		\section*{مراجع}
+	\end{RTL}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+	
+	% ==============================
+	% Title Page
+	% ==============================
+	\begin{titlepage}
+		\centering
+		\vspace*{1cm}
+		\includegraphics[width=4cm]{sharif.png}\\[1.5cm]
+		{\Large\textbf{دانشگاه صنعتی شریف}}\\[0.5cm]
+		{\large\textbf{دانشکده‌ٔ مهندسی کامپیوتر}}\\[1.5cm]
+		{\Huge\textbf{گزارش کار آزمایشگاه}}\\[0.5cm]
+		{\LARGE\textbf{آزمایشگاه سیستم‌های عامل}}\\[2cm]
+		
+		\textbf{گزارش آزمایش شماره ۱۰}\\
+		(آشنایی با درایور‌ها)
+		
+		\vfill
+		\begin{tabular}{rl}
+			\textbf{شماره‌ی گروه:} & ۲۰ \\
+			\textbf{گروه:} &
+			ارشیا یوسف‌نیا (۴۰۱۱۱۰۴۱۵) \\
+			& محمدعارف زارع زاده (۴۰۱۱۰۶۰۱۷) \\
+			\textbf{استاد درس:} & دکتر بیگی \\
+			\textbf{تاریخ:} & تابستان ۱۴۰۴ \\
+		\end{tabular}
+	\end{titlepage}
+	
+	% ==============================
+	% Persian Ordinal Page Numbering
+	% ==============================
+	\clearpage
+	\setcounter{page}{1}
+	\renewcommand{\thepage}{\persianordinalpage}
+	
+	\tableofcontents
+	\clearpage
+	\listoffigures
+	%\clearpage
+	%\listoftables
+	
+	% ==============================
+	% Switch to Persian Digits (۱, ۲, ۳, ...)
+	% ==============================
+	\clearpage
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
+	\renewcommand{\thepage}{\persianfont\arabic{page}}
+	
+	
+	% ==============================
+	% Main Content
+	% ==============================
+	\section{آزمایش ۱}
+	\subsection{نیازمندی‌های اجرا}
+	برای ساخت ماژول و بارگذاری و حذف، مراحل زیر را دنبال کنید:
+	
+	\begin{english}
+		\noindent
+		\# install required dependencies \\
+		sudo apt upgrade \\
+		sudo apt install build-essential linux-headers-\$(uname -r) \\
+		\# command to build a driver module \\
+		make \\
+		\# commands to load and remove a driver module \\
+		sudo insmode driver.ko \\
+		sudo rmmod driver.ko
+	\end{english}
+	
+	\subsection{توضیح کد و روند آزمایش}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report10-resources/screenshots/1.png}
+		\caption{برنامهٔ درایور آزمایش}
+		\label{img:1}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report10-resources/screenshots/2.png}
+		\caption{دستورالعمل ساخت یا \textenglish{Makefile}}
+		\label{img:2}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report10-resources/screenshots/3.png}
+		\caption{نتیجهٔ ساخت و استفاده از درایور}
+		\label{img:3}
+	\end{figure}
+	\section{آزمایش ۲}
+	\subsection{نیازمندی‌های اجرا}
+	مشابه آزمایش قبل:
+	
+	\begin{english}
+		\noindent
+		\# install required dependencies \\
+		sudo apt upgrade \\
+		sudo apt install build-essential linux-headers-\$(uname -r) \\
+		\# command to build a driver module \\
+		make \\
+		\# commands to load and remove a driver module \\
+		sudo insmode driver.ko \\
+		sudo rmmod driver.ko
+	\end{english}
+	\subsection{توضیح کد و روند آزمایش}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report10-resources/screenshots/4.png}
+		\caption{برنامهٔ درایور آزمایش}
+		\label{img:4}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report10-resources/screenshots/5.png}
+		\caption{دستورالعمل ساخت یا \textenglish{Makefile}}
+		\label{img:5}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report10-resources/screenshots/6.png}
+		\caption{ساخت و بارگذاری ماژول و تبادل بسته با اینترنت}
+		\label{img:6}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{report10-resources/screenshots/7.png}
+		\caption{مشاهده فایل لاگ بسته‌های دیده شده از درایور و پیام‌های کرنل}
+		\label{img:7}
+	\end{figure}
+        
+	% ==============================
+	% References
+	% ==============================
+	\newpage
+	\begin{LTR}
+		\printbibliography[title={مراجع}]
+	\end{LTR}
+
+	
+\end{document}
+
